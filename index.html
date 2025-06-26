@@ -1,27 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cronómetro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="estilo.css" rel="stylesheet" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <main>
-      <div class="circle">
-        <div id="stopwatch" class="stopwatch">00:00</div>
-        <div class="buttons">
-          <div class="stop" onclick="stop()"></div>
-          <div id="play-pause" class="paused" onclick="playPause()"></div>
+    <div class="container">
+      <h1>Cronómetro</h1>
+      <main>
+        <div class="circle">
+          <div id="stopwatch" class="stopwatch">00:00</div>
+          <div class="buttons">
+            <div class="stop" onclick="stop()" title="Detener"></div>
+            <div
+              id="play-pause"
+              class="paused"
+              onclick="playPause()"
+              title="Iniciar/Pausar"
+            ></div>
+          </div>
         </div>
+        <div id="seconds-sphere" class="seconds-sphere"></div>
+      </main>
+      <div class="controls">
+        <button class="reset-btn" onclick="stop()">Reiniciar</button>
+        <button class="lap-btn" onclick="addLap()">Vuelta</button>
       </div>
-      <div id="seconds-sphere" class="seconds-sphere"></div>
-    </main>
+      <div class="laps-container">
+        <h3>Vueltas</h3>
+        <ul id="laps-list" class="laps-list"></ul>
+      </div>
+    </div>
   </body>
 </html>
